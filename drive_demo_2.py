@@ -8,7 +8,8 @@ drive_motor_1 = Motor(OUTPUT_B)
 drive_motor_2 = Motor(OUTPUT_C)
 
 def drive(pos, spd, md1, md2):
-    '''Moves the robot forward, backward, or turns in place
+    '''
+    Moves the robot forward, backward, or turns in place
 
     pos = number of degrees each motor turns
     spd = absolute speed of both motors
