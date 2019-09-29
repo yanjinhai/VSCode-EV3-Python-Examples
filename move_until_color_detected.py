@@ -9,13 +9,20 @@ SPEED = 300
 drive_motor_1 = Motor(OUTPUT_B)
 drive_motor_2 = Motor(OUTPUT_C)
 
+# Initialize color sensor
 color_sensor_1 = ColorSensor(INPUT_2)
 
-drive_motor_1.run_forever(speed_sp = 250)
-drive_motor_2.run_forever(speed_sp = 250)
+# Set color sensor to color mode
+color_sensor_1.mode = ColorSensor.MODE_COL_COLOR
 
-#drive_motor_1.wait_until (color_sensor_1.color == ColorSensor.COLOR_BLACK, timeout = 10000)
-#drive_motor_2.wait_until (color_sensor_1.color == ColorSensor.COLOR_BLACK, timeout = 10000)
+# Runs motors at speed of SPEED
+drive_motor_1.run_forever(speed_sp = SPEED)
+drive_motor_2.run_forever(speed_sp = SPEED)
 
+# Waits for the color sensor to detect black
 while color_sensor_1.color != ColorSensor.COLOR_BLACK:
     print('Looking for black...')
+
+# Stops the motors
+drive_motor_1.stop
+drive_motor_2.stop
