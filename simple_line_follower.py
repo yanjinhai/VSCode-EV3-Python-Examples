@@ -10,8 +10,8 @@ Answer the questions along the way to determine the purpose of individual sectio
 from ev3dev.ev3 import *
 
 # What does this section do? _________________________
-SPEED_SLOW = 200
-SPEED_FAST = 400
+SPEED_SLOW = -50 # Negative speed because the robot is driving backwards
+SPEED_FAST = -200 # Negative speed because the robot is driving backwards
 drive_motor_1 = Motor(OUTPUT_B)
 drive_motor_2 = Motor(OUTPUT_C)
 color_sensor_1 = ColorSensor(INPUT_2)
